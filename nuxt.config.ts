@@ -6,8 +6,6 @@ export default defineNuxtConfig({
 
   ssr: true,
   devtools: { enabled: true },
-  target: 'static',
-  extractCSS: true,
 
   app: {
     head: {
@@ -69,7 +67,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     'nuxt-booster',
-    // '@nuxt/image',
+    '@nuxt/image',
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
     [
@@ -162,15 +160,30 @@ export default defineNuxtConfig({
   booster: {
     detection: {
       performance: true,
-      browserSupport: true,
-      battery: true,
+      browserSupport: true
     },
     performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 }
+      },
       timing: {
         fcp: 800,
         dcl: 1200
       }
+    },
+    targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
+    componentAutoImport: false,
+    componentPrefix: undefined,
+
+    /**
+     * IntersectionObserver rootMargin for Compoennts and Assets
+     */
+    lazyOffset: {
+      component: '0%',
+      asset: '0%'
     }
+    
   },
 
   image: {
@@ -186,14 +199,7 @@ export default defineNuxtConfig({
       '4k': 1921
     },
     provider: "ipx",
-    domains: [process.env.NUXT_BASE_URL ?? 'http://localhost:3000'],
-    dir: "assets",
-    fallback: true,
-    // domains: ['img.youtube.com', 'i.vimeocdn.com'],
-    // alias: {
-    //   youtube: 'https://img.youtube.com',
-    //   vimeo: 'https://i.vimeocdn.com',
-    // }
+    dir: "assets"
   },
 
   googleFonts: {

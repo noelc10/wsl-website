@@ -1,11 +1,11 @@
 <template>
   <div class="app-container break-keep">
     <NuxtLoadingIndicator />
-    <ClientOnly>
-      <NuxtLayout>
+    <NuxtLayout>
+      <ClientOnly>
         <NuxtPage />
-      </NuxtLayout>
-    </ClientOnly>
+      </ClientOnly>
+    </NuxtLayout>
     <NuxtSnackbar />
   </div>
 </template>
