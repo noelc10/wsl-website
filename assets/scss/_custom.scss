@@ -1,0 +1,40 @@
+/*
+ * Custom Styles
+ */
+
+.gradient-border-mask {
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.gradient-border-mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: linear-gradient(270deg, oklch(var(--s)), oklch(var(--p))) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  transition: all 1s ease-in-out;
+}
+
+.gradient-border-mask:hover::before {
+  background: linear-gradient(270deg, oklch(var(--p)), oklch(var(--s))) border-box;
+}
+
+.gradient-border-mask:hover {
+  background: linear-gradient(270deg, oklch(var(--p)), oklch(var(--s)));
+}
+
+.gradient-outline-text {
+  background: linear-gradient(270deg, #03C8D0, #2473E9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+}

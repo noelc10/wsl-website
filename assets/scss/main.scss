@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './tools';
+
+@layer base {
+  html {
+    @apply bg-white;
+    @apply text-[#494949];
+  }
+
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-slate-950;
+  }
+
+  h1 {
+    @apply text-4xl
+  }
+
+  html.dark h1 {
+    @apply text-white
+  }
+
+  h2 {
+    @apply text-3xl
+  }
+
+  html.dark h2 {
+    @apply text-white
+  }
+
+  h3 {
+    @apply text-2xl
+  }
+
+  html.dark h3 {
+    @apply text-white
+  }
+
+  h4 {
+    @apply text-xl
+  }
+
+  html.dark h4 {
+    @apply text-white
+  }
+
+  h5 {
+    @apply text-lg
+  }
+
+  html.dark h5 {
+    @apply text-white
+  }
+
+  h6 {
+    @apply text-base
+  }
+
+  html.dark h6 {
+    @apply text-white
+  }
+
+  ul {
+    @apply list-disc
+  }
+
+  ol {
+    @apply list-decimal
+  }
+}
