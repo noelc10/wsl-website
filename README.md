@@ -1,6 +1,6 @@
-# WSoftLabs Website
+# WSL Website
 
-The repository for WSoftLabs Website, made with Nuxt 3 and TailwindCSS
+The repository for WSL Website, made with Nuxt 3.13.2 and TailwindCSS with an issue with Hydration Mismatch TODO
 
 ## Setup
 
