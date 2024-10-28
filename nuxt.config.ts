@@ -182,24 +182,47 @@ export default defineNuxtConfig({
     lazyOffset: {
       component: '0%',
       asset: '0%'
+    },
+
+    image: {
+      providers:{
+        customProvider:{
+          name: 'assetsProvider',
+          provider: '~/providers/assets-provider.ts', // must be created
+          options:{
+            // baseURL: "_nuxt/assets"
+            baseURL: `${process.env.NUXT_BASE_URL ?? 'http://localhost:3000'}/_nuxt/assets`
+          }
+        }
+      },
+      provider: "assetsProvider",
     }
-    
   },
 
   image: {
-    screens: {
-      default: 320,
-      xxs: 480,
-      xs: 576,
-      sm: 768,
-      md: 996,
-      lg: 1200,
-      xl: 1367,
-      xxl: 1600,
-      '4k': 1921
+    providers:{
+      customProvider:{
+        name: 'assetsProvider',
+        provider: '~/providers/assets-provider.ts', // must be created
+        options:{
+          // baseURL: "_nuxt/assets"
+          baseURL: `${process.env.NUXT_BASE_URL ?? 'http://localhost:3000'}/_nuxt/assets`
+        }
+      }
     },
-    provider: "ipx",
-    dir: "assets"
+    // screens: {
+    //   default: 320,
+    //   xxs: 480,
+    //   xs: 576,
+    //   sm: 768,
+    //   md: 996,
+    //   lg: 1200,
+    //   xl: 1367,
+    //   xxl: 1600,
+    //   '4k': 1921
+    // },
+    provider: "assetsProvider",
+    // dir: "assets"
   },
 
   googleFonts: {

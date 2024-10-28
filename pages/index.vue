@@ -27,8 +27,6 @@ const jumbotronContentIsVisible = useElementVisibility(jumbotronContentRef)
           >
             <NuxtImg
               v-show="jumbotronContentIsVisible"
-              format="webp"
-              fit="outside"
               width="637px"
               height="90px"
               class="w-auto h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.7xl)*theme(lineHeight.tight))] sm:h-[calc(theme(fontSize.7xl)*theme(lineHeight.tight))]"
